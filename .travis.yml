@@ -10,7 +10,7 @@ before install:
 script: 
     - docker run -e CI=true shivamgoyal312/react-test npm test
 
-after success:
+after_success:
     - docker build shivamgoyal312/multi-client ./client
     - docker build shivamgoyal312/multi-nginx ./nginx
     - docker build shivamgoyal312/multi-server ./server
