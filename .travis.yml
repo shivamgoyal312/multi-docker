@@ -16,7 +16,7 @@ after_success:
     - docker build -t shivamgoyal312/multi-server ./server
     - docker build -t shivamgoyal312/multi-worker ./worker
     #Docker LOGIN
-    - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     #PUsh images to Docker Hub
     - docker push shivamgoyal312/multi-client
     - docker push shivamgoyal312/multi-nginx
