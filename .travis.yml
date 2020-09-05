@@ -11,10 +11,10 @@ script:
     - docker run -e CI=true shivamgoyal312/react-test npm test
 
 after_success:
-    - docker build shivamgoyal312/multi-client ./client
-    - docker build shivamgoyal312/multi-nginx ./nginx
-    - docker build shivamgoyal312/multi-server ./server
-    - docker build shivamgoyal312/multi-worker ./worker
+    - docker build -t shivamgoyal312/multi-client ./client
+    - docker build -t shivamgoyal312/multi-nginx ./nginx
+    - docker build -t shivamgoyal312/multi-server ./server
+    - docker build -t shivamgoyal312/multi-worker ./worker
     #Docker LOGIN
     - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
     #PUsh images to Docker Hub
